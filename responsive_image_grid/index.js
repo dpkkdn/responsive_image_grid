@@ -70,6 +70,8 @@ function deleteImage(index) {
   const divDelete = document.getElementById(index);
   containerDiv.removeChild(divDelete);
   console.log('Removed the div at index: ', index, divDelete);
+  imagesList.splice(index, 1); // delete the image details from the list
+  // so it doesn't come again if we click 'Shuffle'
 }
 
 // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
