@@ -1,0 +1,126 @@
+body {
+  margin: 2em auto;
+}
+
+.container > div {
+  border-radius: 5px;
+  border: 2px solid rgb(79, 185, 227);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 204px);
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 20px;
+  gap: 20px;
+}
+
+.container img {
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  background: url(https://via.placeholder.com/200) no-repeat scroll 0 0;
+  /* show placeholder image untill the actual image loads*/
+}
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.imgContainer {
+  position: relative;
+}
+
+/* The overlay effect (full height and width) - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: red;
+}
+
+/* When you mouse over the container, fade in the overlay icon*/
+.imgContainer:hover .overlay {
+  opacity: 0.6;
+}
+
+/* flip the image when hovering over its container */
+.imgContainer:hover img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* The icon inside the overlay is positioned in the middle vertically and horizontally */
+.icon {
+  color: white;
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* When you move the mouse over the icon, change color */
+.icon:hover {
+  color: rgb(2, 36, 109);
+}
+
+/* Responsive layout - makes a five column-layout */
+@media screen and (max-width: 1336px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 204px);
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 20px;
+    gap: 20px;
+  }
+}
+
+/* Responsive layout - makes a four column-layout */
+@media screen and (max-width: 1125px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 204px);
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 20px;
+    gap: 20px;
+  }
+}
+
+/* Responsive layout - makes a three column-layout */
+@media screen and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 204px);
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 20px;
+    gap: 20px;
+  }
+}
+
+/* Responsive layout - makes a two column-layout */
+@media screen and (max-width: 700px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 204px);
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 20px;
+    gap: 20px;
+  }
+}
+
+/* Responsive layout - makes a one column-layout */
+@media screen and (max-width: 500px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 204px);
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 20px;
+    gap: 20px;
+  }
+}
